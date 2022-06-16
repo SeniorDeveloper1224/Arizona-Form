@@ -1,0 +1,12 @@
+{
+    "apps": [{
+        "name": "report_app",
+        "script": "manage.py",
+        "args": ["runserver", "0:9000"],
+        "instances": "1",
+        "wait_ready": true,
+        "autorestart": true,
+        "max_restarts": 10,
+        "interpreter" : "/home/customer/env/bin/python"
+    }]
+}
