@@ -1,0 +1,113 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <link rel="stylesheet" href="{% static 'report/css/bootstrap.min.css'%}">
+    <script src="{% static 'report/js/jquery.js'%}"></script>
+    <script src="{% static 'report/js/bootstrap.min.js'%}"></script>
+</head>
+<body class="bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 shadow-sm rounded-3 bg-white">
+                <div class="container">
+                <h1 class="text-center py-3">Arizona Reporting</h1>
+                <hr>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Manufacturer ID</label>
+                            <input type="text" maxlength="3" id="id_manufacturer_id" name="manufacturer_id" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Provider ID</label>
+                            <input type="text" maxlength="3" id="id_provider_id" name="provider_id" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Installer ID</label>
+                            <input type="text" maxlength="3" id="id_installer_id" name="installer_id" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="mt-5">Customer Name</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Last Name</label>
+                            <input type="text" maxlength="30" id="id_last_name" name="last_name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">First Name</label>
+                            <input type="text" maxlength="30" id="id_first_name" name="first_name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Middle Name</label>
+                            <input type="text" maxlength="30" id="id_middle_name" name="middle_name" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Date of Birth</label>
+                            <input type="date" id="id_date_of_birth" name="date_of_birth" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">DL/Customer #</label>
+                            <input type="text" maxlength="25" id="id_dl" name="dl" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Date of Birth</label>
+                            <input type="date" id="id_date_of_birth" name="date_of_birth" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Install Date (If Reporting "I")</label>
+                            <input type="date" id="id_install_date" name="install_date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Removal Date (If Reporting "R")</label>
+                            <input type="date" id="id_removal_date" name="removal_date" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Report Type</label>
+                            <select id="id_report_type" name="report_type" class="form-control>
+                                <option value=""></option>
+                            </select>
+                            <input type="date" >
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+<script type="text/javascript">
+    
+</script>
+</body>
+</html>
