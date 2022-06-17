@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "arizona-reporting",
+  "private_key_id": "49bd39a9760fd3e6996c79afc9816075ba6c20d2",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCkiogwRK/YFRNU\nZWj5AMkmYY6kY36J6sjkMBlyoXyoQt4pNG5LxXcIiiYhuMnft/hFMxPgEpKem8dp\nyAITkbBR7g/FMxWqk0qAjdYBn+8bVmFSfppxYfPb3CgR4eDmHl6TPFLauhGlojd+\n4lSSH897FtqV7nAx6f3D+EftY2C1Mff/bMfxsuzKRrOMlzgeRXXDoFiDZwziO8/C\n0a4jj35BVer0VZM5FGXjLuFhq2Gi6l8Ju+0gkDvJOV0Bi8To2QTJxfsZs1dvQX57\nNgHA/Z/DW5ZhkissLWcw4YrRIMCAIRqTSn2pOHX5xVpu8JF+cWlVfx4iXxEP7Wr6\nViDUtLzpAgMBAAECggEASon7Yiproq8Bf7UlFdB2T23Yib4M3/u9oCnuDVD8wNjx\n/aaj5K2C3BqBZbtpsHCOBwM5mMOxKisV7mTOFAFm5+a5vDMFOK3bDVuzvC6wyiia\nlB2IZ57hMxOMD3XNRVIys+6a9j1eqzNOgquTdlL00iUrRsqqhuIitLlwFCl18P8D\nwcWpEAxqQvheIgxQ8aq86t0KPB0JTkSCYctvTJ21fc5cy0OD6Zv6aXn0KEGT7zPT\nTx23BLa4rPcABimK4hffwm2sDowd2/Y0x+ijUWhOTrGbNs3oCbSzmXOxIZ9/dlW2\nFllyVnPQjZ4mjW4yusTXRJjFI7hIjhpGkdXAuawAtQKBgQDnAFpC3g070YeOooEs\n1bhYtc+kCY2fja+RU0zYCPqP9KBcGlbyWPjSjX8p2gx2Z5CDUo8IUC+XwpTgOkzA\nJw42NP+FqDa1UtRO4SGAKguUzn7tqwtQLE0LkRTGYaSYbtxS7+t22WaBsWf0cT0u\nm1M4yn6wd8taFDE8Wi+Mx+xKRwKBgQC2WPggic8T42H7wSrcAVJYN8hMBxHm/FJc\n0cj2soFkDkPEdB+FyCD9i6Tspw2JwzIIvDpjH+GZSxniyKEpecb/OlqIV6kJaRuZ\nl2UTMUltjHenPCbt1bsUSYBLxme8t0w1f++SbomKYh+bRAwLMcLHopoLYVuatvhn\n8tBfRD8nTwKBgHYlYQTYKy6QEOPry2OR/5InkwaT+EJFpikO0Luhg/2CoU3aDuQu\nizytL//IzRz2BRyVaiBXWrAkzh4M01pn30XsP1At46VDsuCRFqBFYNz/7D1EgSnF\nLraewmBgal2oPbmRif2kXWAxyzhjfmZK/PqL3tYEvxXYRAJZIf6/9eNbAoGBAIuY\nuPxQBBP5s32EeEdNS7j1m4V4tB/dc0BT6kHSjnQG56JyM9+7QmZYjb4OdbLNmHRP\nhXN1aMRuVjbj2V1jORETn1NZqLLnoJWI7Xwv80LGkqOYzUSupzX0vx9DmQ9EVDdw\n5ft4XBtw2zmGcqHvSmqC9ONZeUOMZ8dMgHEuUhrJAoGAKfiXeUo0GU065/XqsM5n\nhYnJtetPktI6NuoW5GWgTqbikqpALSYr+joOSkADpUL03UbI0ggnMLpmL8GbbVEf\nGM671DrY6I6tR28FRzUv7CWm7R6cNZ17IWeFEtlTwaZG1R2zBKS+Av7/JuyTwELp\nVWdiMw0GYQP83LqbUmXzdBI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "arizona-reporting@arizona-reporting.iam.gserviceaccount.com",
+  "client_id": "100267560411504826870",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/arizona-reporting%40arizona-reporting.iam.gserviceaccount.com"
+}

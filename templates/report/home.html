@@ -13,8 +13,14 @@
 </head>
 <body class="bg-light">
     <div class="container">
+        
         <div class="row">
             <div class="col-md-12 shadow-sm rounded-3 bg-white">
+                {% if msg %}
+                    <div class="alert alert-success" role="alert">
+                        {{msg}}
+                    </div>
+                {% endif %}
                 <div class="row">
                 <div class="col-md-12 mx-auto" style="padding: 5%;">
                 <h1 class="text-center py-3">Arizona Reporting</h1>
@@ -138,7 +144,7 @@
                     <div class="col-md-3">
                         <div class="form-group">
                             <label for="">Device Download Time *</label>
-                            <input type="time" id="id_device_download_time" name="device_download_time" class="form-control" required>
+                            <input type="time" id="id_device_download_time" name="device_download_time" class="form-control" required step="1">
                         </div>
                     </div>
                 </div>
@@ -376,12 +382,12 @@
                 <div class="row mt-3">
                     <div class="col-md-3 mx-auto">
                         <div class="form-group">
-                            <button type="submit" name="save" class="btn form-control btn-primary">Save</button>
+                            <button type="submit" id="id_save" name="save" class="btn form-control btn-primary">Save</button>
                         </div>
                     </div>
                     <div class="col-md-3 mx-auto">
                         <div class="form-group">
-                            <button type="submit" name="export" class="btn form-control btn-primary">Export</button>
+                            <button type="button" id="id_export" name="export" class="btn form-control btn-primary">Export</button>
                         </div>
                     </div>
                 </div>
@@ -393,6 +399,7 @@
     </div>
 
 <script type="text/javascript">
+
     $("#id_report_type").on('change', function() {
         if ($(this).val() == "I"){
             $("#id_install_date").prop('required',true);
