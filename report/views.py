@@ -5,7 +5,6 @@ import json
 
 def home(request):
     context = {}
-    print(request.POST)
     if request.method == 'POST':
         manufacturer_id = request.POST.get('manufacturer_id')
         provider_id = request.POST.get('provider_id')
