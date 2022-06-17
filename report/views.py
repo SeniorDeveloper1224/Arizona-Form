@@ -85,7 +85,10 @@ def home(request):
         worksheet.update_cell(count, 14, bca_violation_count)
         worksheet.update_cell(count, 15, returned_error_code)
         worksheet.update_cell(count, 16, device_download_date)
-        worksheet.update_cell(count, 17, device_download_time)
+        if len(device_download_time) > 3:
+            worksheet.update_cell(count, 17, device_download_time)
+        else:
+            worksheet.update_cell(count, 17, "")
         worksheet.update_cell(count, 18, tampering_occurrence_date)
         worksheet.update_cell(count, 19, bca_violation_date_1)
         worksheet.update_cell(count, 20, bca_violation_date_2)
@@ -93,28 +96,70 @@ def home(request):
         worksheet.update_cell(count, 22, device_id)
         worksheet.update_cell(count, 23, tech_id)
         worksheet.update_cell(count, 24, bypass_approval)
-        worksheet.update_cell(count, 25, bypass_time)
+        if len(bypass_time) > 3:
+            worksheet.update_cell(count, 25, bypass_time)
+        else:
+            worksheet.update_cell(count, 25, "")
         worksheet.update_cell(count, 26, vin)
         worksheet.update_cell(count, 27, interlock_order)
-        worksheet.update_cell(count, 28, bca_violation_time_1)
+        if len(bca_violation_time_1) > 3:
+            worksheet.update_cell(count, 28, bca_violation_time_1)
+        else:
+            worksheet.update_cell(count, 28, "")
         worksheet.update_cell(count, 29, bca_violation_value_1)
-        worksheet.update_cell(count, 30, bca_violation_time_2)
+        if len(bca_violation_time_2) > 3:
+            worksheet.update_cell(count, 30, bca_violation_time_2)
+        else:
+            worksheet.update_cell(count, 30, "")
         worksheet.update_cell(count, 31, bca_violation_value_2)
-        worksheet.update_cell(count, 32, bca_violation_time_3)
+        if len(bca_violation_time_1) > 3:
+            worksheet.update_cell(count, 32, bca_violation_time_3)
+        else:
+            worksheet.update_cell(count, 32, "")
         worksheet.update_cell(count, 33, bca_violation_value_3)
         worksheet.update_cell(count, 34, tampering_violation_count)
-        worksheet.update_cell(count, 35, tampering_time_1)
-        worksheet.update_cell(count, 36, tampering_time_2)
+        if len(bca_violation_time_1) > 3:
+            worksheet.update_cell(count, 35, tampering_time_1)
+        else:
+            worksheet.update_cell(count, 35, "")
+        if len(bca_violation_time_1) > 3:
+            worksheet.update_cell(count, 36, tampering_time_2)
+        else:
+            worksheet.update_cell(count, 36, "")
         worksheet.update_cell(count, 37, circumvention_count)
-        worksheet.update_cell(count, 38, circumvention_time_1)
-        worksheet.update_cell(count, 39, circumvention_time_2)
+        if len(bca_violation_time_1) > 3:
+            worksheet.update_cell(count, 38, circumvention_time_1)
+        else:
+            worksheet.update_cell(count, 38, "")
+        if len(bca_violation_time_1) > 3:
+            worksheet.update_cell(count, 39, circumvention_time_2)
+        else:
+            worksheet.update_cell(count, 39, "")
         worksheet.update_cell(count, 40, missed_rolling_retest_count)
-        worksheet.update_cell(count, 41, missed_rolling_retest_time_1)
-        worksheet.update_cell(count, 42, missed_rolling_retest_time_2)
-        worksheet.update_cell(count, 43, missed_rolling_retest_time_3)
-        worksheet.update_cell(count, 44, missed_rolling_retest_time_4)
-        worksheet.update_cell(count, 45, missed_rolling_retest_time_5)
-        worksheet.update_cell(count, 46, missed_rolling_retest_time_6)
+        if len(bca_violation_time_1) > 3:
+            worksheet.update_cell(count, 41, missed_rolling_retest_time_1)
+        else:
+            worksheet.update_cell(count, 41, "")
+        if len(bca_violation_time_1) > 3:
+            worksheet.update_cell(count, 42, missed_rolling_retest_time_2)
+        else:
+            worksheet.update_cell(count, 42, "")
+        if len(bca_violation_time_1) > 3:
+            worksheet.update_cell(count, 43, missed_rolling_retest_time_3)
+        else:
+            worksheet.update_cell(count, 43, "")
+        if len(bca_violation_time_1) > 3:
+            worksheet.update_cell(count, 44, missed_rolling_retest_time_4)
+        else:
+            worksheet.update_cell(count, 44, "")
+        if len(bca_violation_time_1) > 3:
+            worksheet.update_cell(count, 45, missed_rolling_retest_time_5)
+        else:
+            worksheet.update_cell(count, 45, "")
+        if len(missed_rolling_retest_time_6) > 3:
+            worksheet.update_cell(count, 46, missed_rolling_retest_time_6)
+        else:
+            worksheet.update_cell(count, 46, "")
         worksheet.update_cell(count, 47, send_as_received)
 
         context["msg"] = "File Save Successfully!"
