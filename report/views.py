@@ -112,47 +112,47 @@ def home(request):
         else:
             worksheet.update_cell(count, 30, "")
         worksheet.update_cell(count, 31, bca_violation_value_2)
-        if len(bca_violation_time_1) > 3:
+        if len(bca_violation_time_3) > 3:
             worksheet.update_cell(count, 32, bca_violation_time_3)
         else:
             worksheet.update_cell(count, 32, "")
         worksheet.update_cell(count, 33, bca_violation_value_3)
         worksheet.update_cell(count, 34, tampering_violation_count)
-        if len(bca_violation_time_1) > 3:
+        if len(tampering_time_1) > 3:
             worksheet.update_cell(count, 35, tampering_time_1)
         else:
             worksheet.update_cell(count, 35, "")
-        if len(bca_violation_time_1) > 3:
+        if len(tampering_time_2) > 3:
             worksheet.update_cell(count, 36, tampering_time_2)
         else:
             worksheet.update_cell(count, 36, "")
         worksheet.update_cell(count, 37, circumvention_count)
-        if len(bca_violation_time_1) > 3:
+        if len(circumvention_time_1) > 3:
             worksheet.update_cell(count, 38, circumvention_time_1)
         else:
             worksheet.update_cell(count, 38, "")
-        if len(bca_violation_time_1) > 3:
+        if len(circumvention_time_2) > 3:
             worksheet.update_cell(count, 39, circumvention_time_2)
         else:
             worksheet.update_cell(count, 39, "")
         worksheet.update_cell(count, 40, missed_rolling_retest_count)
-        if len(bca_violation_time_1) > 3:
+        if len(missed_rolling_retest_time_1) > 3:
             worksheet.update_cell(count, 41, missed_rolling_retest_time_1)
         else:
             worksheet.update_cell(count, 41, "")
-        if len(bca_violation_time_1) > 3:
+        if len(missed_rolling_retest_time_2) > 3:
             worksheet.update_cell(count, 42, missed_rolling_retest_time_2)
         else:
             worksheet.update_cell(count, 42, "")
-        if len(bca_violation_time_1) > 3:
+        if len(missed_rolling_retest_time_3) > 3:
             worksheet.update_cell(count, 43, missed_rolling_retest_time_3)
         else:
             worksheet.update_cell(count, 43, "")
-        if len(bca_violation_time_1) > 3:
+        if len(missed_rolling_retest_time_4) > 3:
             worksheet.update_cell(count, 44, missed_rolling_retest_time_4)
         else:
             worksheet.update_cell(count, 44, "")
-        if len(bca_violation_time_1) > 3:
+        if len(missed_rolling_retest_time_5) > 3:
             worksheet.update_cell(count, 45, missed_rolling_retest_time_5)
         else:
             worksheet.update_cell(count, 45, "")
