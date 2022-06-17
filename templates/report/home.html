@@ -15,9 +15,12 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 shadow-sm rounded-3 bg-white">
-                <div class="container">
+                <div class="row">
+                <div class="col-md-12 mx-auto">
                 <h1 class="text-center py-3">Arizona Reporting</h1>
                 <hr>
+                <form method="post">
+                    {% csrf_token %}
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
@@ -72,42 +75,603 @@
                             <input type="text" maxlength="25" id="id_dl" name="dl" class="form-control" required>
                         </div>
                     </div>
+                </div>
+                <div class="row mt-4">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Date of Birth</label>
-                            <input type="date" id="id_date_of_birth" name="date_of_birth" class="form-control">
+                            <label for="">MVD Uninstall Date</label>
+                            <input type="date" id="id_mvd_uninstall_date" name="mvd_uninstall_date" class="form-control">
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Report Type</label>
+                            <select id="id_report_type" name="report_type" class="form-control" required>
+                                <option value="">Please Select</option>
+                                <option value="I">I</option>
+                                <option value="R">R</option>
+                                <option value="A">A</option>
+                                <option value="V">V</option>
+                                <option value="E">E</option>
+                                <option value="M">M</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="id_install_date_s" hidden>
+                        <div class="form-group">
+                            <label for="">Install Date (If Reporting "I")</label>
+                            <input type="date" id="id_install_date" name="install_date" class="form-control" >
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="id_removal_date_s" hidden>
+                        <div class="form-group">
+                            <label for="">Removal Date (If Reporting "R")</label>
+                            <input type="date" id="id_removal_date" name="removal_date" class="form-control" >
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Non-Compliance Code</label>
+                            <input type="text" maxlength="1" id="id_non_compliance_code" name="non_compliance_code" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">BAC Violation Count</label>
+                            <select id="id_bca_violation_count" name="bca_violation_count" class="form-control" required>
+                                <option value="">Please Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Device Download Date</label>
+                            <input type="date" id="id_device_download_date" name="device_download_date" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Device Download Time</label>
+                            <input type="time" id="id_device_download_time" name="device_download_time" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4" id="id_bca_violation_1" hidden>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">BAC Violation Date 1</label>
+                            <input type="date" id="id_bca_violation_date_1" name="bca_violation_date_1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">BAC Violation Time 1</label>
+                            <input type="time" id="id_bca_violation_time_1" name="bca_violation_time_1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">BAC Violation Value 1</label>
+                            <input type="text" maxlength="3" id="id_bca_violation_value_1" name="bca_violation_value_1" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4" id="id_bca_violation_2" hidden>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">BAC Violation Date 2</label>
+                            <input type="date" id="id_bca_violation_date_2" name="bca_violation_date_2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">BAC Violation Time 2</label>
+                            <input type="time" id="id_bca_violation_time_2" name="bca_violation_time_2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">BAC Violation Value 2</label>
+                            <input type="text" maxlength="3" id="id_bca_violation_value_2" name="bca_violation_value_2" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4" id="id_bca_violation_3" hidden>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">BAC Violation Date 3</label>
+                            <input type="date" id="id_bca_violation_date_3" name="bca_violation_date_3" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">BAC Violation Time 3</label>
+                            <input type="time" id="id_bca_violation_time_3" name="bca_violation_time_3" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">BAC Violation Value 3</label>
+                            <input type="text" maxlength="3" id="id_bca_violation_value_3" name="bca_violation_value_3" class="form-control">
                         </div>
                     </div>
                 </div>
                 <div class="row mt-4">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Install Date (If Reporting "I")</label>
-                            <input type="date" id="id_install_date" name="install_date" class="form-control">
+                            <label for="">Tampering/Circumvention occurrence date</label>
+                            <input type="date" id="id_tampering_occurrence_date" name="tampering_occurrence_date" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Removal Date (If Reporting "R")</label>
-                            <input type="date" id="id_removal_date" name="removal_date" class="form-control">
+                            <label for="">Device ID</label>
+                            <input type="text" maxlength="18" id="id_device_id" name="device_id" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Report Type</label>
-                            <select id="id_report_type" name="report_type" class="form-control>
-                                <option value=""></option>
+                            <label for="">Employee ID (Tech_ID)</label>
+                            <input type="text" maxlength="12" id="id_tech_id" name="tech_id" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Bypass Approval</label>
+                            <select id="id_bypass_approval" name="bypass_approval" class="form-control" required>
+                                <option value="">Please Select</option>
+                                <option value="yes">Yes</option>
+                                <option value="no"></option>
                             </select>
-                            <input type="date" >
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="id_bypass_time_s" hidden>
+                        <div class="form-group">
+                            <label for="">Bypass Time</label>
+                            <input type="time" id="id_bypass_time" name="bypass_time" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Returned Error Code</label>
+                            <input type="text" maxlength="2" id="id_returned_error_code" name="returned_error_code" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">VIN</label>
+                            <input type="text" maxlength="6" id="id_vin" name="vin" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="">Interlock Order</label>
+                            <input type="text" maxlength="3" id="id_interlock_order" name="interlock_order" class="form-control">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Tampering Violation Count</label>
+                            <select id="id_tampering_violation_count" name="tampering_violation_count" class="form-control" required>
+                                <option value="">Please Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="id_tampering_time_1_s" hidden>
+                        <div class="form-group">
+                            <label for="">Tampering Time 1</label>
+                            <input type="time" id="id_tampering_time_1" name="tampering_time_1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="id_tampering_time_2_s" hidden>
+                        <div class="form-group">
+                            <label for="">Tampering Time 2</label>
+                            <input type="time" id="id_tampering_time_2" name="tampering_time_2" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="">Circumvention Count</label>
+                            <select id="id_circumvention_count" name="circumvention_count" class="form-control" required>
+                                <option value="">Please Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="id_circumvention_time_1_s" hidden>
+                        <div class="form-group">
+                            <label for="">Circumvention Time 1</label>
+                            <input type="time" id="id_circumvention_time_1" name="circumvention_time_1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4" id="id_circumvention_time_2_s" hidden>
+                        <div class="form-group">
+                            
+                            <label for="">Circumvention Time 2</label>
+                            <input type="time" id="id_circumvention_time_2" name="circumvention_time_2" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Missed Rolling Retest Count</label>
+                            <select id="id_missed_rolling_retest_count" name="missed_rolling_retest_count" class="form-control" required>
+                                <option value="">Please Select</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3" id="id_missed_rolling_retest_time_1_s" hidden>
+                        <div class="form-group">
+                            <label for="">Missed Rolling Retest Time 1</label>
+                            <input type="time" id="id_missed_rolling_retest_time_1" name="missed_rolling_retest_time_1" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group" id="id_missed_rolling_retest_time_2_s" hidden>
+                            <label for="">Missed Rolling Retest Time 2</label>
+                            <input type="time" id="id_missed_rolling_retest_time_2" name="missed_rolling_retest_time_2" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group" id="id_missed_rolling_retest_time_3_s" hidden>
+                            <label for="">Missed Rolling Retest Time 3</label>
+                            <input type="time" id="id_missed_rolling_retest_time_3" name="missed_rolling_retest_time_3" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-4" >
+                    
+                    <div class="col-md-3" id="id_missed_rolling_retest_time_4_s" hidden>
+                        <div class="form-group">
+                            <label for="">Missed Rolling Retest Time 4</label>
+                            <input type="time" id="id_missed_rolling_retest_time_4" name="missed_rolling_retest_time_4" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3" id="id_missed_rolling_retest_time_5_s" hidden>
+                        <div class="form-group">
+                            <label for="">Missed Rolling Retest Time 5</label>
+                            <input type="time" id="id_missed_rolling_retest_time_5" name="missed_rolling_retest_time_5" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3" id="id_missed_rolling_retest_time_6_s" hidden>
+                        <div class="form-group">
+                            <label for="">Missed Rolling Retest Time 6</label>
+                            <input type="time" id="id_missed_rolling_retest_time_6" name="missed_rolling_retest_time_6" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="">Send as received</label>
+                            <input type="text" maxlength="50" id="id_send_as_received" name="send_as_received" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row my-5">
+                    <div class="col-md-3 mx-auto">
+                        <div class="form-group">
+                            <button type="submit" class="btn form-control btn-primary">Submit</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </form>
+        </div>
         </div>
     </div>
+
 <script type="text/javascript">
+    $("#id_report_type").on('change', function() {
+        if ($(this).val() == "I"){
+            $("#id_install_date").prop('required',true);
+            $("#id_install_date_s").prop('hidden',false);
+            $("#id_removal_date").prop('required',false);
+            $("#id_removal_date_s").prop('hidden',true);
+        } else if ($(this).val() == "R"){
+            $("#id_removal_date").prop('required',true);
+            $("#id_removal_date_s").prop('hidden',false);
+            $("#id_install_date").prop('required',false);
+            $("#id_install_date_s").prop('hidden',true);
+        } else {
+            $("#id_install_date").prop('required',false);
+            $("#id_removal_date").prop('required',false);
+            $("#id_install_date_s").prop('hidden',true);
+            $("#id_removal_date_s").prop('hidden',true);
+        }
+    });
     
+    
+    
+    $("#id_bca_violation_count").on('change', function() {
+        if ($(this).val() == "1"){
+            $("#id_bca_violation_1").prop('hidden',false);
+            $("#id_bca_violation_date_1").prop('required',true);
+            $("#id_bca_violation_time_1").prop('required',true);
+            $("#id_bca_violation_value_1").prop('required',true);
+            
+            $("#id_bca_violation_2").prop('hidden',true);
+            $("#id_bca_violation_date_2").prop('required',false);
+            $("#id_bca_violation_time_2").prop('required',false);
+            $("#id_bca_violation_value_2").prop('required',false);
+            
+            $("#id_bca_violation_3").prop('hidden',true);
+            $("#id_bca_violation_date_3").prop('required',false);
+            $("#id_bca_violation_time_3").prop('required',false);
+            $("#id_bca_violation_value_3").prop('required',false);
+        } else if ($(this).val() == "2"){
+            $("#id_bca_violation_1").prop('hidden',false);
+            $("#id_bca_violation_date_1").prop('required',true);
+            $("#id_bca_violation_time_1").prop('required',true);
+            $("#id_bca_violation_value_1").prop('required',true);
+            
+            $("#id_bca_violation_2").prop('hidden',false);
+            $("#id_bca_violation_date_2").prop('required',true);
+            $("#id_bca_violation_time_2").prop('required',true);
+            $("#id_bca_violation_value_2").prop('required',true);
+            
+            $("#id_bca_violation_3").prop('hidden',true);
+            $("#id_bca_violation_date_3").prop('required',false);
+            $("#id_bca_violation_time_3").prop('required',false);
+            $("#id_bca_violation_value_3").prop('required',false);
+        } else if ($(this).val() == "3"){
+            $("#id_bca_violation_1").prop('hidden',false);
+            $("#id_bca_violation_date_1").prop('required',true);
+            $("#id_bca_violation_time_1").prop('required',true);
+            $("#id_bca_violation_value_1").prop('required',true);
+            
+            $("#id_bca_violation_2").prop('hidden',false);
+            $("#id_bca_violation_date_2").prop('required',true);
+            $("#id_bca_violation_time_2").prop('required',true);
+            $("#id_bca_violation_value_2").prop('required',true);
+            
+            $("#id_bca_violation_3").prop('hidden',false);
+            $("#id_bca_violation_date_3").prop('required',true);
+            $("#id_bca_violation_time_3").prop('required',true);
+            $("#id_bca_violation_value_3").prop('required',true);
+        } else {
+            $("#id_bca_violation_1").prop('hidden',true);
+            $("#id_bca_violation_date_1").prop('required',false);
+            $("#id_bca_violation_time_1").prop('required',false);
+            $("#id_bca_violation_value_1").prop('required',false);
+            
+            $("#id_bca_violation_2").prop('hidden',true);
+            $("#id_bca_violation_date_2").prop('required',false);
+            $("#id_bca_violation_time_2").prop('required',false);
+            $("#id_bca_violation_value_2").prop('required',false);
+            
+            $("#id_bca_violation_3").prop('hidden',true);
+            $("#id_bca_violation_date_3").prop('required',false);
+            $("#id_bca_violation_time_3").prop('required',false);
+            $("#id_bca_violation_value_3").prop('required',false);
+        }
+    });
+
+
+    $("#id_bypass_approval").on('change', function() {
+        if ($(this).val() == "yes"){
+            $("#id_bypass_time_s").prop('hidden',false);
+            $("#id_bypass_time").prop('required',true);
+        } else {
+            $("#id_bypass_time_s").prop('hidden',true);
+            $("#id_bypass_time").prop('required',false);
+        }
+    });
+    
+    
+    $("#id_tampering_violation_count").on('change', function() {
+        if ($(this).val() == "1"){
+            $("#id_tampering_time_1_s").prop('hidden',false);
+            $("#id_tampering_time_1").prop('required',true);
+            
+            $("#id_tampering_time_2_s").prop('hidden',true);
+            $("#id_tampering_time_2").prop('required',false);
+        } else if ($(this).val() == "2"){
+            $("#id_tampering_time_1_s").prop('hidden',false);
+            $("#id_tampering_time_1").prop('required',true);
+            
+            $("#id_tampering_time_2_s").prop('hidden',false);
+            $("#id_tampering_time_2").prop('required',true);
+        } else {
+            $("#id_tampering_time_1_s").prop('hidden',true);
+            $("#id_tampering_time_1").prop('required',false);
+            
+            $("#id_tampering_time_2_s").prop('hidden',true);
+            $("#id_tampering_time_2").prop('required',false);
+        }
+    });
+    
+
+    $("#id_circumvention_count").on('change', function() {
+        if ($(this).val() == "1"){
+            $("#id_circumvention_time_1_s").prop('hidden',false);
+            $("#id_circumvention_time_1").prop('required',true);
+            
+            $("#id_circumvention_time_2_s").prop('hidden',true);
+            $("#id_circumvention_time_2").prop('required',false);
+        } else if ($(this).val() == "2"){
+            $("#id_circumvention_time_1_s").prop('hidden',false);
+            $("#id_circumvention_time_1").prop('required',true);
+            
+            $("#id_circumvention_time_2_s").prop('hidden',false);
+            $("#id_circumvention_time_2").prop('required',true);
+        } else {
+            $("#id_circumvention_time_1_s").prop('hidden',true);
+            $("#id_circumvention_time_1").prop('required',false);
+            
+            $("#id_circumvention_time_2_s").prop('hidden',true);
+            $("#id_circumvention_time_2").prop('required',false);
+        }
+    });
+    
+    
+    $("#id_missed_rolling_retest_count").on('change', function() {
+        if ($(this).val() == "1"){
+            $("#id_missed_rolling_retest_time_1_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_1").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_2_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_2").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_3_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_3").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_4_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_4").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_5_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_5").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_6_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_6").prop('required',false);
+
+        } else if ($(this).val() == "2"){
+
+            $("#id_missed_rolling_retest_time_1_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_1").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_2_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_2").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_3_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_3").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_4_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_4").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_5_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_5").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_6_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_6").prop('required',false);
+        
+        } else if ($(this).val() == "3"){
+
+            $("#id_missed_rolling_retest_time_1_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_1").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_2_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_2").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_3_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_3").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_4_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_4").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_5_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_5").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_6_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_6").prop('required',false);
+        
+        } else if ($(this).val() == "4"){
+
+            $("#id_missed_rolling_retest_time_1_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_1").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_2_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_2").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_3_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_3").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_4_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_4").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_5_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_5").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_6_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_6").prop('required',false);
+       
+        } else if ($(this).val() == "5"){
+
+            $("#id_missed_rolling_retest_time_1_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_1").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_2_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_2").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_3_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_3").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_4_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_4").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_5_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_5").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_6_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_6").prop('required',false);
+       
+        } else if ($(this).val() == "6"){
+
+            $("#id_missed_rolling_retest_time_1_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_1").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_2_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_2").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_3_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_3").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_4_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_4").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_5_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_5").prop('required',true);
+            
+            $("#id_missed_rolling_retest_time_6_s").prop('hidden',false);
+            $("#id_missed_rolling_retest_time_6").prop('required',true);
+
+        } else {
+            $("#id_missed_rolling_retest_time_1_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_1").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_2_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_2").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_3_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_3").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_4_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_4").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_5_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_5").prop('required',false);
+            
+            $("#id_missed_rolling_retest_time_6_s").prop('hidden',true);
+            $("#id_missed_rolling_retest_time_6").prop('required',false);
+        }
+    });
 </script>
+
 </body>
 </html>
