@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-12 shadow-sm rounded-3 bg-white">
                 <div class="row">
-                <div class="col-md-12 mx-auto">
+                <div class="col-md-12 mx-auto" style="padding: 5%;">
                 <h1 class="text-center py-3">Arizona Reporting</h1>
                 <hr>
                 <form method="post">
@@ -24,19 +24,19 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Manufacturer ID</label>
+                            <label for="">Manufacturer ID *</label>
                             <input type="text" maxlength="3" id="id_manufacturer_id" name="manufacturer_id" class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Provider ID</label>
+                            <label for="">Provider ID *</label>
                             <input type="text" maxlength="3" id="id_provider_id" name="provider_id" class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Installer ID</label>
+                            <label for="">Installer ID *</label>
                             <input type="text" maxlength="3" id="id_installer_id" name="installer_id" class="form-control" required>
                         </div>
                     </div>
@@ -45,13 +45,13 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Last Name</label>
+                            <label for="">Last Name *</label>
                             <input type="text" maxlength="30" id="id_last_name" name="last_name" class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">First Name</label>
+                            <label for="">First Name *</label>
                             <input type="text" maxlength="30" id="id_first_name" name="first_name" class="form-control" required>
                         </div>
                     </div>
@@ -65,13 +65,13 @@
                 <div class="row mt-4">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="">Date of Birth</label>
+                            <label for="">Date of Birth *</label>
                             <input type="date" id="id_date_of_birth" name="date_of_birth" class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="">DL/Customer #</label>
+                            <label for="">DL/Customer # *</label>
                             <input type="text" maxlength="25" id="id_dl" name="dl" class="form-control" required>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                     
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Report Type</label>
+                            <label for="">Report Type *</label>
                             <select id="id_report_type" name="report_type" class="form-control" required>
                                 <option value="">Please Select</option>
                                 <option value="I">I</option>
@@ -100,13 +100,13 @@
                     </div>
                     <div class="col-md-4" id="id_install_date_s" hidden>
                         <div class="form-group">
-                            <label for="">Install Date (If Reporting "I")</label>
+                            <label for="">Install Date (If Reporting "I") *</label>
                             <input type="date" id="id_install_date" name="install_date" class="form-control" >
                         </div>
                     </div>
                     <div class="col-md-4" id="id_removal_date_s" hidden>
                         <div class="form-group">
-                            <label for="">Removal Date (If Reporting "R")</label>
+                            <label for="">Removal Date (If Reporting "R") *</label>
                             <input type="date" id="id_removal_date" name="removal_date" class="form-control" >
                         </div>
                     </div>
@@ -120,7 +120,7 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="">BAC Violation Count</label>
+                            <label for="">BAC Violation Count *</label>
                             <select id="id_bca_violation_count" name="bca_violation_count" class="form-control" required>
                                 <option value="">Please Select</option>
                                 <option value="1">1</option>
@@ -131,13 +131,13 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="">Device Download Date</label>
+                            <label for="">Device Download Date *</label>
                             <input type="date" id="id_device_download_date" name="device_download_date" class="form-control" required>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="">Device Download Time</label>
+                            <label for="">Device Download Time *</label>
                             <input type="time" id="id_device_download_time" name="device_download_time" class="form-control" required>
                         </div>
                     </div>
@@ -145,19 +145,19 @@
                 <div class="row mt-4" id="id_bca_violation_1" hidden>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">BAC Violation Date 1</label>
+                            <label for="">BAC Violation Date 1 *</label>
                             <input type="date" id="id_bca_violation_date_1" name="bca_violation_date_1" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">BAC Violation Time 1</label>
+                            <label for="">BAC Violation Time 1 *</label>
                             <input type="time" id="id_bca_violation_time_1" name="bca_violation_time_1" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">BAC Violation Value 1</label>
+                            <label for="">BAC Violation Value 1 *</label>
                             <input type="text" maxlength="3" id="id_bca_violation_value_1" name="bca_violation_value_1" class="form-control">
                         </div>
                     </div>
@@ -165,19 +165,19 @@
                 <div class="row mt-4" id="id_bca_violation_2" hidden>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">BAC Violation Date 2</label>
+                            <label for="">BAC Violation Date 2 *</label>
                             <input type="date" id="id_bca_violation_date_2" name="bca_violation_date_2" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">BAC Violation Time 2</label>
+                            <label for="">BAC Violation Time 2 *</label>
                             <input type="time" id="id_bca_violation_time_2" name="bca_violation_time_2" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">BAC Violation Value 2</label>
+                            <label for="">BAC Violation Value 2 *</label>
                             <input type="text" maxlength="3" id="id_bca_violation_value_2" name="bca_violation_value_2" class="form-control">
                         </div>
                     </div>
@@ -185,19 +185,19 @@
                 <div class="row mt-4" id="id_bca_violation_3" hidden>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">BAC Violation Date 3</label>
+                            <label for="">BAC Violation Date 3 *</label>
                             <input type="date" id="id_bca_violation_date_3" name="bca_violation_date_3" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">BAC Violation Time 3</label>
+                            <label for="">BAC Violation Time 3 *</label>
                             <input type="time" id="id_bca_violation_time_3" name="bca_violation_time_3" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">BAC Violation Value 3</label>
+                            <label for="">BAC Violation Value 3 *</label>
                             <input type="text" maxlength="3" id="id_bca_violation_value_3" name="bca_violation_value_3" class="form-control">
                         </div>
                     </div>
@@ -225,7 +225,7 @@
                 <div class="row mt-4">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Bypass Approval</label>
+                            <label for="">Bypass Approval *</label>
                             <select id="id_bypass_approval" name="bypass_approval" class="form-control" required>
                                 <option value="">Please Select</option>
                                 <option value="yes">Yes</option>
@@ -235,7 +235,7 @@
                     </div>
                     <div class="col-md-4" id="id_bypass_time_s" hidden>
                         <div class="form-group">
-                            <label for="">Bypass Time</label>
+                            <label for="">Bypass Time *</label>
                             <input type="time" id="id_bypass_time" name="bypass_time" class="form-control">
                         </div>
                     </div>
@@ -265,7 +265,7 @@
                 <div class="row mt-4">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Tampering Violation Count</label>
+                            <label for="">Tampering Violation Count *</label>
                             <select id="id_tampering_violation_count" name="tampering_violation_count" class="form-control" required>
                                 <option value="">Please Select</option>
                                 <option value="1">1</option>
@@ -275,13 +275,13 @@
                     </div>
                     <div class="col-md-4" id="id_tampering_time_1_s" hidden>
                         <div class="form-group">
-                            <label for="">Tampering Time 1</label>
+                            <label for="">Tampering Time 1 *</label>
                             <input type="time" id="id_tampering_time_1" name="tampering_time_1" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4" id="id_tampering_time_2_s" hidden>
                         <div class="form-group">
-                            <label for="">Tampering Time 2</label>
+                            <label for="">Tampering Time 2 *</label>
                             <input type="time" id="id_tampering_time_2" name="tampering_time_2" class="form-control">
                         </div>
                     </div>
@@ -289,7 +289,7 @@
                 <div class="row mt-4">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="">Circumvention Count</label>
+                            <label for="">Circumvention Count *</label>
                             <select id="id_circumvention_count" name="circumvention_count" class="form-control" required>
                                 <option value="">Please Select</option>
                                 <option value="1">1</option>
@@ -299,14 +299,14 @@
                     </div>
                     <div class="col-md-4" id="id_circumvention_time_1_s" hidden>
                         <div class="form-group">
-                            <label for="">Circumvention Time 1</label>
+                            <label for="">Circumvention Time 1 *</label>
                             <input type="time" id="id_circumvention_time_1" name="circumvention_time_1" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-4" id="id_circumvention_time_2_s" hidden>
                         <div class="form-group">
                             
-                            <label for="">Circumvention Time 2</label>
+                            <label for="">Circumvention Time 2 *</label>
                             <input type="time" id="id_circumvention_time_2" name="circumvention_time_2" class="form-control">
                         </div>
                     </div>
@@ -314,7 +314,7 @@
                 <div class="row mt-4">
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label for="">Missed Rolling Retest Count</label>
+                            <label for="">Missed Rolling Retest Count *</label>
                             <select id="id_missed_rolling_retest_count" name="missed_rolling_retest_count" class="form-control" required>
                                 <option value="">Please Select</option>
                                 <option value="1">1</option>
@@ -328,19 +328,19 @@
                     </div>
                     <div class="col-md-3" id="id_missed_rolling_retest_time_1_s" hidden>
                         <div class="form-group">
-                            <label for="">Missed Rolling Retest Time 1</label>
+                            <label for="">Missed Rolling Retest Time 1 *</label>
                             <input type="time" id="id_missed_rolling_retest_time_1" name="missed_rolling_retest_time_1" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group" id="id_missed_rolling_retest_time_2_s" hidden>
-                            <label for="">Missed Rolling Retest Time 2</label>
+                            <label for="">Missed Rolling Retest Time 2 *</label>
                             <input type="time" id="id_missed_rolling_retest_time_2" name="missed_rolling_retest_time_2" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group" id="id_missed_rolling_retest_time_3_s" hidden>
-                            <label for="">Missed Rolling Retest Time 3</label>
+                            <label for="">Missed Rolling Retest Time 3 *</label>
                             <input type="time" id="id_missed_rolling_retest_time_3" name="missed_rolling_retest_time_3" class="form-control">
                         </div>
                     </div>
@@ -349,19 +349,19 @@
                     
                     <div class="col-md-3" id="id_missed_rolling_retest_time_4_s" hidden>
                         <div class="form-group">
-                            <label for="">Missed Rolling Retest Time 4</label>
+                            <label for="">Missed Rolling Retest Time 4 *</label>
                             <input type="time" id="id_missed_rolling_retest_time_4" name="missed_rolling_retest_time_4" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-3" id="id_missed_rolling_retest_time_5_s" hidden>
                         <div class="form-group">
-                            <label for="">Missed Rolling Retest Time 5</label>
+                            <label for="">Missed Rolling Retest Time 5 *</label>
                             <input type="time" id="id_missed_rolling_retest_time_5" name="missed_rolling_retest_time_5" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-3" id="id_missed_rolling_retest_time_6_s" hidden>
                         <div class="form-group">
-                            <label for="">Missed Rolling Retest Time 6</label>
+                            <label for="">Missed Rolling Retest Time 6 *</label>
                             <input type="time" id="id_missed_rolling_retest_time_6" name="missed_rolling_retest_time_6" class="form-control">
                         </div>
                     </div>
@@ -373,10 +373,15 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row my-5">
+                <div class="row mt-3">
                     <div class="col-md-3 mx-auto">
                         <div class="form-group">
-                            <button type="submit" class="btn form-control btn-primary">Submit</button>
+                            <button type="submit" name="save" class="btn form-control btn-primary">Save</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mx-auto">
+                        <div class="form-group">
+                            <button type="submit" name="export" class="btn form-control btn-primary">Export</button>
                         </div>
                     </div>
                 </div>
