@@ -2,6 +2,7 @@ from django.shortcuts import render
 from oauth2client.service_account import ServiceAccountCredentials
 import gspread
 import json
+from django.conf import settings
 
 def home(request):
     context = {}
@@ -58,7 +59,7 @@ def home(request):
         'https://www.googleapis.com/auth/spreadsheets',
         'https://www.googleapis.com/auth/drive'
         ]
-        credentials = ServiceAccountCredentials.from_json_keyfile_name("arizona-reporting-49bd39a9760f.json", scopes) #access the json key you downloaded earlier 
+        credentials = ServiceAccountCredentials.from_json_keyfile_name(settings.BASE_DIR / "arizona-reporting-49bd39a9760f.json", scopes) #access the json key you downloaded earlier 
         file = gspread.authorize(credentials) # authenticate the JSON key with gspread
         sheet = file.open("Arizona Reporting")  #open sheet
         worksheet = sheet.sheet1  #replace sheet_name with the name that corresponds to yours, e.g, it can be sheet1
