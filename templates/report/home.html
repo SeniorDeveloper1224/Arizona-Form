@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report</title>
     <link rel="stylesheet" href="{% static 'report/css/bootstrap.min.css'%}">
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'fontawesome/css/all.min.css'%}">
     <script src="{% static 'report/js/jquery.js'%}"></script>
     <script src="{% static 'report/js/bootstrap.min.js'%}"></script>
 
@@ -405,7 +405,7 @@
 <script type="text/javascript">
 
     $("#id_export").click(function(e) {
-        $(this).html('<i class="fa fa-spinner fa-spin"></i> Loading').prop("disabled", true);
+        $(this).html('<i class="fa-solid fa-spinner fa-spin"></i> Loading').prop("disabled", true);
 
     $.ajax({
         type: "POST",
