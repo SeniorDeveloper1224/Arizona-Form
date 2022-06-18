@@ -1,5 +1,5 @@
 __pycache__/
-repoting/__pycache__/
-media/
+reporting/__pycache__/
+report/__pycache__/
 *.so
 *.pyc
