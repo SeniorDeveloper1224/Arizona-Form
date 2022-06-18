@@ -8,8 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report</title>
     <link rel="stylesheet" href="{% static 'report/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
     <script src="{% static 'report/js/jquery.js'%}"></script>
     <script src="{% static 'report/js/bootstrap.min.js'%}"></script>
+
 </head>
 <body class="bg-light">
     <div class="container">
@@ -23,9 +25,9 @@
                 {% endif %}
                 <div class="row">
                 <div class="col-md-12 mx-auto" style="padding: 5%;">
-                <h1 class="text-center py-3">Arizona Reporting</h1>
+                <h1 class="text-center">Arizona Reporting</h1>
                 <hr>
-                <form method="post">
+                <form method="post" id="id_report_form">
                     {% csrf_token %}
                 <div class="row">
                     <div class="col-md-4">
@@ -388,6 +390,8 @@
                     <div class="col-md-3 mx-auto">
                         <div class="form-group">
                             <button type="button" id="id_export" name="export" class="btn form-control btn-primary">Export</button>
+                            <a hidden href="/media/toadot.txt" download id="id_download_file">download</a>
+
                         </div>
                     </div>
                 </div>
@@ -399,6 +403,26 @@
     </div>
 
 <script type="text/javascript">
+
+    $("#id_export").click(function(e) {
+        $(this).html('<i class="fa fa-spinner fa-spin"></i> Loading').prop("disabled", true);
+
+    $.ajax({
+        type: "POST",
+        url: "{% url 'export_text_file' %}",
+        data: {
+            csrfmiddlewaretoken: '{{ csrf_token }}'
+        }, 
+        success: function(data)
+        {   
+            if (data["status"] == true){
+                $('#id_download_file')[0].click();
+                $("#id_export").html('Export').prop("disabled", false);;
+            } 
+        }
+    });
+
+    });
 
     $("#id_report_type").on('change', function() {
         if ($(this).val() == "I"){

@@ -3,6 +3,8 @@ from oauth2client.service_account import ServiceAccountCredentials
 import gspread
 import json
 from django.conf import settings
+from django.http import JsonResponse
+
 
 def home(request):
     context = {}
@@ -63,12 +65,9 @@ def home(request):
         file = gspread.authorize(credentials) # authenticate the JSON key with gspread
         sheet = file.open("Arizona Reporting")  #open sheet
         worksheet = sheet.sheet1  #replace sheet_name with the name that corresponds to yours, e.g, it can be sheet1
-        count = 1
-        while True:
-            row = worksheet.row_values(count)
-            if len(row) <= 0:
-                break
-            count += 1
+        
+        list_of_lists = worksheet.get_all_values()
+        count = len(list_of_lists) + 1
         worksheet.update_cell(count, 1, manufacturer_id)
         worksheet.update_cell(count, 2, provider_id)
         worksheet.update_cell(count, 3, installer_id)
@@ -165,3 +164,68 @@ def home(request):
         context["msg"] = "File Save Successfully!"
         return render(request, "report/home.html", context)
     return render(request, "report/home.html", context)
+
+def export_text_file(request):
+    if request.method == 'POST':
+        scopes = [
+        'https://www.googleapis.com/auth/spreadsheets',
+        'https://www.googleapis.com/auth/drive'
+        ]
+        credentials = ServiceAccountCredentials.from_json_keyfile_name(settings.BASE_DIR / "arizona-reporting-49bd39a9760f.json", scopes)
+        file = gspread.authorize(credentials) 
+        sheet = file.open("Arizona Reporting") 
+        worksheet = sheet.sheet1
+        rows = worksheet.get_all_values()
+        rows = rows[1:]
+        with open(settings.BASE_DIR / 'media/toadot.txt', 'w') as f:
+            for row in rows:
+                f.write(row[0] + " "*(3-len(row[0])))
+                f.write(row[1] + " "*(3-len(row[1])))
+                f.write(row[2] + " "*(3-len(row[2])))
+                f.write(row[3] + " "*(30-len(row[3])))
+                f.write(row[4] + " "*(30-len(row[4])))
+                f.write(row[5] + " "*(30-len(row[5])))
+                f.write(row[6] + " "*(8-len(row[6])))
+                f.write(row[7] + " "*(25-len(row[7])))
+                f.write(row[8] + " "*(8-len(row[8])))
+                f.write(row[9] + " "*(8-len(row[9])))
+                f.write(row[10] + " "*(8-len(row[10])))
+                f.write(row[11] + " "*(1-len(row[11])))
+                f.write(row[12] + " "*(1-len(row[12])))
+                f.write(row[13] + " "*(4-len(row[13])))
+                f.write(row[14] + " "*(2-len(row[14])))
+                f.write(row[15] + " "*(8-len(row[15])))
+                f.write(row[16] + " "*(11-len(row[16])))
+                f.write(row[17] + " "*(8-len(row[17])))
+                f.write(row[18] + " "*(8-len(row[18])))
+                f.write(row[19] + " "*(8-len(row[19])))
+                f.write(row[20] + " "*(8-len(row[20])))
+                f.write(row[21] + " "*(18-len(row[21])))
+                f.write(row[22] + " "*(12-len(row[22])))
+                f.write(row[23] + " "*(1-len(row[23])))
+                f.write(row[24] + " "*(11-len(row[24])))
+                f.write(row[25] + " "*(6-len(row[25])))
+                f.write(row[26] + " "*(3-len(row[26])))
+                f.write(row[27] + " "*(11-len(row[27])))
+                f.write(row[28] + " "*(3-len(row[28])))
+                f.write(row[29] + " "*(11-len(row[29])))
+                f.write(row[30] + " "*(3-len(row[30])))
+                f.write(row[31] + " "*(11-len(row[31])))
+                f.write(row[32] + " "*(3-len(row[32])))
+                f.write(row[33] + " "*(2-len(row[33])))
+                f.write(row[34] + " "*(11-len(row[34])))
+                f.write(row[35] + " "*(11-len(row[35])))
+                f.write(row[36] + " "*(2-len(row[36])))
+                f.write(row[37] + " "*(11-len(row[37])))
+                f.write(row[38] + " "*(11-len(row[38])))
+                f.write(row[39] + " "*(3-len(row[39])))
+                f.write(row[40] + " "*(11-len(row[40])))
+                f.write(row[41] + " "*(11-len(row[41])))
+                f.write(row[42] + " "*(11-len(row[42])))
+                f.write(row[43] + " "*(11-len(row[43])))
+                f.write(row[44] + " "*(11-len(row[44])))
+                f.write(row[45] + " "*(11-len(row[45])))
+                f.write(row[46] + " "*(50-len(row[46])))
+                f.write("\n")
+
+    return JsonResponse({"status":True})
