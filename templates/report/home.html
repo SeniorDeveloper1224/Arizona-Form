@@ -235,7 +235,7 @@
                         <div class="form-group">
                             <label for="">Bypass Approval *</label>
                             <select id="id_bypass_approval" name="bypass_approval" class="form-control" required>
-                                <option value="">Please Select</option>
+                                <option>Please Select</option>
                                 <option value="Y">Yes</option>
                                 <option value=""></option>
                             </select>
@@ -516,7 +516,7 @@
 
 
     $("#id_bypass_approval").on('change', function() {
-        if ($(this).val() == "yes"){
+        if ($(this).val() == "Y"){
             $("#id_bypass_time_s").prop('hidden',false);
             $("#id_bypass_time").prop('required',true);
         } else {
