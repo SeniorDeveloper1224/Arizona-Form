@@ -4,7 +4,8 @@ import gspread
 import json
 from django.conf import settings
 from django.http import JsonResponse
-
+import googleapiclient.discovery
+from googleapiclient.http import MediaFileUpload
 
 def home(request):
     context = {}
@@ -176,7 +177,7 @@ def export_text_file(request):
         sheet = file.open("Arizona Reporting") 
         worksheet = sheet.sheet1
         rows = worksheet.get_all_values()
-        rows = rows[1:]
+        # rows = rows[1:]
         with open(settings.BASE_DIR / 'media/toadot.txt', 'w') as f:
             for row in rows:
                 f.write(row[0] + " "*(3-len(row[0])))
@@ -228,4 +229,21 @@ def export_text_file(request):
                 f.write(row[46] + " "*(50-len(row[46])))
                 f.write("\n")
 
+        service = googleapiclient.discovery.build('drive', 'v3',credentials=credentials)
+        folder_id = "1siDQTsb0mKRaJl6qYnW7yS6w3pE4Nice"
+        file_names = ["toadot.txt"]
+        mime_types = ["text/plain"]
+
+        for file_name, mime_type in zip(file_names, mime_types):
+            file_metadata = {
+                "name": file_name,
+                "parents": [folder_id],
+            }
+            media = MediaFileUpload(settings.BASE_DIR / "media/toadot.txt", mimetype="text/plain")
+            service.files().create(
+                body=file_metadata,
+                media_body=media,
+                fields="id"
+            ).execute()
+        
     return JsonResponse({"status":True})

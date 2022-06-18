@@ -416,9 +416,14 @@
         success: function(data)
         {   
             if (data["status"] == true){
-                $('#id_download_file')[0].click();
-                $("#id_export").html('Export').prop("disabled", false);;
-            } 
+                // $('#id_download_file')[0].click();
+                alert("File Successfully Exported to Google Drive!")
+                $("#id_export").html('Export').prop("disabled", false);
+            } else {
+                alert("There is a issue while exporting file to Google Drive!")
+                $("#id_export").html('Export').prop("disabled", false);
+
+            }
         }
     });
 
