@@ -177,6 +177,7 @@ def export_text_file(request):
         sheet = file.open("Arizona Reporting") 
         worksheet = sheet.sheet1
         rows = worksheet.get_all_values()
+        print(len(rows))
         # rows = rows[1:]
         with open(settings.BASE_DIR / 'media/toadot.txt', 'w') as f:
             for row in rows:
@@ -197,36 +198,156 @@ def export_text_file(request):
                 f.write(row[14] + " "*(2-len(row[14])))
                 f.write(row[15] + " "*(8-len(row[15])))
                 f.write(row[16] + " "*(11-len(row[16])))
-                f.write(row[17] + " "*(8-len(row[17])))
-                f.write(row[18] + " "*(8-len(row[18])))
-                f.write(row[19] + " "*(8-len(row[19])))
-                f.write(row[20] + " "*(8-len(row[20])))
-                f.write(row[21] + " "*(18-len(row[21])))
-                f.write(row[22] + " "*(12-len(row[22])))
-                f.write(row[23] + " "*(1-len(row[23])))
-                f.write(row[24] + " "*(11-len(row[24])))
-                f.write(row[25] + " "*(6-len(row[25])))
-                f.write(row[26] + " "*(3-len(row[26])))
-                f.write(row[27] + " "*(11-len(row[27])))
-                f.write(row[28] + " "*(3-len(row[28])))
-                f.write(row[29] + " "*(11-len(row[29])))
-                f.write(row[30] + " "*(3-len(row[30])))
-                f.write(row[31] + " "*(11-len(row[31])))
-                f.write(row[32] + " "*(3-len(row[32])))
-                f.write(row[33] + " "*(2-len(row[33])))
-                f.write(row[34] + " "*(11-len(row[34])))
-                f.write(row[35] + " "*(11-len(row[35])))
-                f.write(row[36] + " "*(2-len(row[36])))
-                f.write(row[37] + " "*(11-len(row[37])))
-                f.write(row[38] + " "*(11-len(row[38])))
-                f.write(row[39] + " "*(3-len(row[39])))
-                f.write(row[40] + " "*(11-len(row[40])))
-                f.write(row[41] + " "*(11-len(row[41])))
-                f.write(row[42] + " "*(11-len(row[42])))
-                f.write(row[43] + " "*(11-len(row[43])))
-                f.write(row[44] + " "*(11-len(row[44])))
-                f.write(row[45] + " "*(11-len(row[45])))
-                f.write(row[46] + " "*(50-len(row[46])))
+                try:
+                    f.write(row[17] + " "*(8-len(row[17])))
+                except:
+                    f.write(" "*8)
+                
+                try:
+                    f.write(row[18] + " "*(8-len(row[18])))
+                except:
+                    f.write(" "*8)
+                
+                try:
+                    f.write(row[19] + " "*(8-len(row[19])))
+                except:
+                    f.write(" "*8)
+               
+                try:
+                    f.write(row[20] + " "*(8-len(row[20])))
+                except:
+                    f.write(" "*8)
+                
+                try:
+                    f.write(row[21] + " "*(18-len(row[21])))
+                except:
+                    f.write(" "*18)
+                
+                try:
+                    f.write(row[22] + " "*(12-len(row[22])))
+                except:
+                    f.write(" "*12)
+                
+                try:
+                    f.write(row[23] + " "*(1-len(row[23])))
+                except:
+                    f.write(" "*1)
+                
+                try:
+                    f.write(row[24] + " "*(11-len(row[24])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[25] + " "*(6-len(row[25])))
+                except:
+                    f.write(" "*6)
+                
+                try:
+                    f.write(row[26] + " "*(3-len(row[26])))
+                except:
+                    f.write(" "*3)
+                
+                try:
+                    f.write(row[27] + " "*(11-len(row[27])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[28] + " "*(3-len(row[28])))
+                except:
+                    f.write(" "*3)
+                
+                try:
+                    f.write(row[29] + " "*(11-len(row[29])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[30] + " "*(3-len(row[30])))
+                except:
+                    f.write(" "*3)
+                
+                try:
+                    f.write(row[31] + " "*(11-len(row[31])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[32] + " "*(3-len(row[32])))
+                except:
+                    f.write(" "*3)
+                
+                try:
+                    f.write(row[33] + " "*(2-len(row[33])))
+                except:
+                    f.write(" "*2)
+                
+                try:
+                    f.write(row[34] + " "*(11-len(row[34])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[35] + " "*(11-len(row[35])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[36] + " "*(3-len(row[36])))
+                except:
+                    f.write(" "*3)
+                
+                try:
+                    f.write(row[37] + " "*(11-len(row[37])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[38] + " "*(11-len(row[38])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[39] + " "*(3-len(row[39])))
+                except:
+                    f.write(" "*3)
+                
+                try:
+                    f.write(row[40] + " "*(11-len(row[40])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[41] + " "*(11-len(row[41])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[42] + " "*(11-len(row[42])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[43] + " "*(11-len(row[43])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[44] + " "*(11-len(row[44])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[45] + " "*(11-len(row[45])))
+                except:
+                    f.write(" "*11)
+                
+                try:
+                    f.write(row[46] + " "*(50-len(row[46])))
+                except:
+                    f.write(" "*50)
+                
                 f.write("\n")
 
         service = googleapiclient.discovery.build('drive', 'v3',credentials=credentials)
